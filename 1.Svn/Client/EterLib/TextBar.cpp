@@ -8,7 +8,7 @@ void CTextBar::TextOut(int ix, int iy, const char * c_szText)
 #include <regex>
 void CTextBar::TextOut(int ix, int iy, const char * c_szText)
 {
-	const auto x = std::regex_replace(c_szText, std::regex("\\|c[a-zA-Z0-9]+\\|h"), "");
+	const auto x = std::regex_replace(c_szText, std::regex("\\|c[a-zA-Z0-9]+|\\|[r|R|H|h]"), "");
 	c_szText = x.c_str();
 
 	if (m_isBold) {
